@@ -1,0 +1,11 @@
+{
+  "colleges": [
+    { "id": 1, "title": "University of a", "location": "bfe" },
+    { "id": 2, "title": "University of b", "location": "cali" },
+    { "id": 3, "title": "University of c", "location": "europe" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
