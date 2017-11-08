@@ -6,72 +6,15 @@
           <span class="text">School Name</span>
   
           <div class="menu">
+              <ul *ngFor="let college of colleges">
+                  <div class="item"#{{college.id}}>{{college.title}}</div>
+              </ul>
             <div class="item">AQA Examination Body --- United Kingdom, United Kingdom</div>
             <div class="item">ASA College --- Brooklyn, NY</div>
             <div class="item">Abia State University --- Abia State, Nigeria</div>
             <div class="item">Abilene Christian University --- Abilene, TX</div>
-            <div class="item">Abraham Baldwin Agrl College --- Tifton, GA</div>
-            <div class="item">Abu Dhabi Men's College --- Abu Dhabi, United Arab Emirates</div>
-            <div class="item">Academy of Art College --- San Francisco, CA</div>
-            <div class="item">Accademia Europea Di Firenze --- Florence, Italy</div>
-            <div class="item">Adams State College --- Alamosa, CO</div>
-            <div class="item">Adelphi University --- Garden City, NY</div>
-            <div class="item">Adirondack Community College --- Queensbury, NY</div>
-            <div class="item">Advanced Cert. Secondary Ed. --- United Kingdom, United Kingdom</div>
-            <div class="item">Afyon Kocatepe University --- Afyon, Turkey</div>
-            <div class="item">Agnes Scott College --- Decatur, GA</div>
-            <div class="item">Ahsanullah Univ of Sci & Tech --- Dhaka, Bangladesh</div>
-            <div class="item">Aiken Technical College --- Aiken, SC</div>
-            <div class="item">Aims Community College --- Greeley, CO</div>
-            <div class="item">Air University-CCAF --- Maxwell A F B, AL</div>
-            <div class="item">Al Afaaq Institute for Health --- Qassim, Saudi Arabia</div>
-            <div class="item">Al Akhawayn University --- Ifrane, Morocco</div>
-            <div class="item">Al Alamiah Inst for Computer --- Jeddah, Saudi Arabia</div>
-            <div class="item">Al Jouf University --- Al-Jawf, Saudi Arabia</div>
-            <div class="item">Al Khaleej Inst. for Appl'd Sc --- Riyadh, Saudi Arabia</div>
-            <div class="item">Al Mouwasat Applied Science In --- Dammam, Saudi Arabia</div>
-            <div class="item">Al Yamamah University --- Riyadh, Saudi Arabia</div>
-            <div class="item">Al-Ahliyya Amman University --- Amman, Jordan</div>
-            <div class="item">Al-Imam Mohammad IBN Saud --- Riyadh, Saudi Arabia</div>
-            <div class="item">Alabama A & M University --- Normal, AL</div>
-            <div class="item">Alabama Southern Cmty College --- Monroeville, AL</div>
-            <div class="item">Alabama State University --- Montgomery, AL</div>
-            <div class="item">Alamance Community College --- Graham, NC</div>
-            <div class="item">Alamo Cmty Coll Dist Ctrl Ofc --- San Antonio, TX</div>
-            <div class="item">Albany State University --- Albany, GA</div>
-            <div class="item">Albany Technical College --- Albany, GA</div>
-            <div class="item">Albert-Ludwigs Univ Freiburg --- Fahnenbergplatz, XX</div>
-            <div class="item">Albertus Magnus College --- New Haven, CT</div>
-            <div class="item">Albion College --- Albion, MI</div>
-            <div class="item">Alcorn State University --- Lorman, MS</div>
-            <div class="item">Aletheia University --- Taipei, Taiwan (Republic Of China)</div>
-            <div class="item">Alexander City State Junior C --- Alexander City, AL</div>
-            <div class="item">Alfred University --- Alfred, NY</div>
-            <div class="item">Alghurair University --- Dubai, United Arab Emirates</div>
-            <div class="item">Algoma University --- Sault Ste Marie, ON</div>
-            <div class="item">Alice Lloyd College --- Pippa Passes, KY</div>
-            <div class="item">Allan Hancock College --- Santa Maria, CA</div>
-            <div class="item">Allegany College --- Cumberland, MD</div>
-            <div class="item">Allegheny College --- Meadville, PA</div>
-            <div class="item">Allen County Community College --- Iola, KS</div>
-            <div class="item">Alma College --- Alma, MI</div>
-            <div class="item">Alpena Community College --- Alpena, MI</div>
-            <div class="item">Alvin Community College --- Alvin, TX</div>
-            <div class="item">Am Intercontinental Univ --- London, United Kingdom</div>
-            <div class="item">Amarillo College --- Amarillo, TX</div>
-            <div class="item">Ambassador College --- Big Sandy, TX</div>
-            <div class="item">Ambrose Alli University --- Ekpoma, Nigeria</div>
-            <div class="item">American College Thessaloniki --- Pylea, Thessaloniki, Greece</div>
-            <div class="item">American College of Dubai --- Dubai, United Arab Emirates</div>
-            <div class="item">American College of Dubai --- Dubai, United Arab Emirates</div>
-            <div class="item">American College of the M East --- Kuwait City, Kuwait</div>
-            <div class="item">American Inst. Higher Educat. --- San Salvador, El Salvador</div>
-            <div class="item">American Institute of Business --- Des Moines, IA</div>
-            <div class="item">American Intercontinental Univ --- Hoffman Estates, IL</div>
-            <div class="item">American Intercontinental Univ --- Atlanta, GA</div>
-  
-  
           </div>
+
         </div>
       </div>
       <div class="eight wide column">
