@@ -10,6 +10,8 @@ import { ClassViewPageComponent } from './class-view-page/class-view-page.compon
 
 import { SchoolSearchService} from './school-search/school-search.service';
 import { HttpModule } from '@angular/http';
+import { ListCoursesComponent } from './list-courses/list-courses.component';
+import { ListCoursesService } from './list-courses/list-courses.service';
 const appRoutes: Routes = [
     { path: '', redirectTo: '#/search', pathMatch: 'full'},
     {
@@ -30,14 +32,15 @@ const appRoutes: Routes = [
     SchoolSearchComponent,
     SelectionPageComponent,
     PageNotFoundComponent,
-    ClassViewPageComponent
+    ClassViewPageComponent,
+    ListCoursesComponent
   ],
   imports: [
     BrowserModule,
       HttpModule,
       RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [SchoolSearchService],
+  providers: [SchoolSearchService, ListCoursesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
