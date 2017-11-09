@@ -1,31 +1,17 @@
-<form class="ui raised large form segment">
+<form class="ui raised large form segment" (click)="onSubmit()">
     <div class="ui grid container">
-      <div class="eight wide column">
-        <div id="search-select" class="ui floating segment dropdown labeled search icon button">
-          <i class="search icon"></i>
-          <span class="text">School Name</span>
-  
-          <div class="menu">
-              <ul *ngFor="let college of colleges">
-                  <div class="item"#{{college.id}}>{{college.title}}</div>
-              </ul>
-            <div class="item">AQA Examination Body --- United Kingdom, United Kingdom</div>
-            <div class="item">ASA College --- Brooklyn, NY</div>
-            <div class="item">Abia State University --- Abia State, Nigeria</div>
-            <div class="item">Abilene Christian University --- Abilene, TX</div>
-          </div>
+        <div class="wide column">
+            <div class="ui search">
+                <div class="ui fluid icon input">
+                    <input class="prompt" type="text" id="college" placeholder="Search college by name or location...">
+                    <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
 
+            </div>
         </div>
-      </div>
-      <div class="eight wide column">
-        <select id="state-select" name="skills" class="ui search fluid dropdown">
-        <option value=""><b>Filter By Location(optional)</b></option>
-        <option value="ky">Kentucky</option>
-        <option value="tn">Tennesee</option>
-        <option value="fl">Flordia</option>
-        <option value="fl">etc..</option>
-  
-      </select>
-      </div>
     </div>
-  </form>
+</form>
+<div *ngIf="collegeSelection">
+    <app-list-courses [collegeSelection]="collegeSelection"></app-list-courses>
+</div>
