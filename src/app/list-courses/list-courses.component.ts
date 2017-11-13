@@ -11,9 +11,8 @@ declare var $: any;
 
 export class ListCoursesComponent implements OnInit {
     @Input() collegeSelection: any;
-    rerender = false;
     courses = [];
-
+    loading = true;
 
     constructor(private searchService: ListCoursesService) {
 
@@ -25,11 +24,15 @@ export class ListCoursesComponent implements OnInit {
     }
 
     startUp() {
+        this.loading = true;
         this.searchService.getCourses(this.collegeSelection.id).subscribe(
             responseCol => {
                 this.courses = responseCol;
                 console.log('here');
                 console.log(this.courses);
             });
+    }
+    tableReady() {
+        this.loading = false;
     }
 }
