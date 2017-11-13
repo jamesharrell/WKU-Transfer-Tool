@@ -1,4 +1,4 @@
-<form class="ui raised large form segment" (click)="onSubmit()">
+<form class="ui raised large form segment">
     <div class="ui grid container">
         <div class="wide column">
             <div class="ui search">
@@ -6,8 +6,7 @@
                     <input class="prompt" type="text" id="college" placeholder="Search college by name or location...">
                     <i class="search icon"></i>
                 </div>
-                <div class="results"></div>
-
+                <div class="results" (click)="onSubmit()"></div>
             </div>
         </div>
     </div>
