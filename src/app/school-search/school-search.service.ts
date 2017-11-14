@@ -8,7 +8,7 @@ export class SchoolSearchService {
     constructor(private http: Http) {
 
     }
-    private url = 'http://trantool.jamesharrell.me:3000/colleges';
+    private url = 'http://ytclone.jamesharrell.me:3000/colleges';
 
     getColleges() {
         return this.http.get(this.url).map((response: Response) => response.json());
