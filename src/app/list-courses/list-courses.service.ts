@@ -11,7 +11,7 @@ export class ListCoursesService {
     private url;
     getCourses(id) {
         console.log('LIST-COURSE SERVICE');
-        this.url = 'http://trantool.jamesharrell.me:3001/courses?collegeID=' + id;
+        this.url = 'http://ser.jamesharrell.me:3001/courses?collegeID=' + id;
         return this.http.get(this.url).map((response: Response) => response.json());
     }
 }
