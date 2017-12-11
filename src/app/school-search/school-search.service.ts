@@ -8,7 +8,7 @@ export class SchoolSearchService {
     constructor(private http: Http) {
 
     }
-    private url = 'https://transfertool.jamesharrell.me/api/colleges.json';
+    private url = 'https://transfertool.jamesharrell.me/api/colleges';
 
     getColleges() {
         return this.http.get(this.url).map((response: Response) => response.json());

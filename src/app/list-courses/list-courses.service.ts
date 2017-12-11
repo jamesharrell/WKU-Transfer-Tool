@@ -11,8 +11,7 @@ export class ListCoursesService {
     private url;
     getCourses(id) {
         console.log('LIST-COURSE SERVICE');
-        // this.url = 'https://transfertool.jamesharrell.me/api/courses?collegeID=' + id;
-        this.url = 'https://transfertool.jamesharrell.me/api/courses';
+        this.url = 'https://transfertool.jamesharrell.me/api/courses/' + 1;
         return this.http.get(this.url).map((response: Response) => response.json());
     }
 }

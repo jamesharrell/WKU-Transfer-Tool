@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SchoolSearchService} from './school-search.service';
-
+import {SearchResult} from '../search-result.model';
 declare var $: any;
 
 @Component({
@@ -21,10 +21,10 @@ export class SchoolSearchComponent implements OnInit {
 
         this.searchService.getColleges().subscribe(
             responseCol => {
+                console.log(responseCol);
                 this.colleges = responseCol;
                 this.handleData();
             });
-
     }
 
     handleData() {
@@ -34,7 +34,6 @@ export class SchoolSearchComponent implements OnInit {
                 'title',
                 'location'
             ]
-
         });
     }
 
