@@ -19,12 +19,12 @@
         </thead>
         <tbody>
         <tr *ngFor="let course of courses">
-            <td> {{course.course}}</td>
-            <td> {{course.title}}</td>
-            <td> {{course.hrs}}</td>
-            <td> {{course.wkucourse}}</td>
-            <td> {{course.wkutitle}}</td>
-            <td> {{course.wkuhrs}}</td>
+            <td> {{course.coursenumber}}</td>
+            <td> {{course.coursetitle}}</td>
+            <td> {{course.coursehrs}}</td>
+            <td> {{course.wkucoursenumber}}</td>
+            <td> {{course.wkucoursetitle}}</td>
+            <td> {{course.wkucoursehrs}}</td>
         </tr>
         {{tableReady()}}
         </tbody>
