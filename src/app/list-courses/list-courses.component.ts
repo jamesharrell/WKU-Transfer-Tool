@@ -30,9 +30,7 @@ export class ListCoursesComponent implements OnInit {
                 this.courses = responseCol;
                 console.log('here');
                 console.log(this.courses);
+                this.loading = false;
             });
-    }
-    tableReady() {
-        this.loading = false;
     }
 }
