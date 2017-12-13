@@ -28,8 +28,6 @@ export class ListCoursesComponent implements OnInit {
         this.searchService.getCourses(this.collegeSelection.id).subscribe(
             responseCol => {
                 this.courses = responseCol;
-                console.log('here');
-                console.log(this.courses);
                 this.loading = false;
             });
     }

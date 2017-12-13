@@ -21,7 +21,6 @@ export class SchoolSearchComponent implements OnInit {
 
         this.searchService.getColleges().subscribe(
             responseCol => {
-                console.log(responseCol);
                 this.colleges = responseCol;
                 this.handleData();
             });
