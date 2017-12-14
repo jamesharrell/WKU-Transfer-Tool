@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SchoolSearchService} from './school-search.service';
-import {SearchResult} from '../search-result.model';
+import {SearchResult} from '../models/search-result.model';
 declare var $: any;
 
 @Component({
