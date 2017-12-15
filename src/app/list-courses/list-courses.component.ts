@@ -1,5 +1,5 @@
-import {Component, OnInit, OnChanges, SimpleChanges, Input} from '@angular/core';
-import {ListCoursesService} from '../services/list-courses.service';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { ListCoursesService } from '../services/list-courses.service';
 
 declare var $: any;
 
@@ -18,12 +18,10 @@ export class ListCoursesComponent implements OnInit, OnChanges {
     }
 
     ngOnInit() {
-
         this.startUp();
     }
     ngOnChanges(changes: SimpleChanges) {
-        console.log('Changes Detected..');
-        this.startUp();
+         this.startUp();
     }
     startUp() {
         this.loading = true;

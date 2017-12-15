@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {SchoolSearchService} from '../services/school-search.service';
-import {SearchResult} from '../models/search-result.model';
+import { Component, OnInit } from '@angular/core';
+import { SchoolSearchService } from '../services/school-search.service';
+import { SearchResult } from '../models/search-result.model';
 
 import { NgModel } from '@angular/forms';
 declare var $: any;
@@ -30,14 +30,10 @@ export class SchoolSearchComponent implements OnInit {
     handleData() {
         $('.ui.search').search({
             source: this.colleges,
-            searchFields: [
-                'title',
-                'location'
-            ]
-        });
-    }
 
-    onSubmit() {
-        this.collegeSelection = $('.ui.search').search('get result');
+            onSelect: function (result, response) {
+                this.collegeSelection = result;
+            }.bind(this)
+        });
     }
 }
