@@ -1,15 +1,14 @@
-import {Component, OnInit, Input} from '@angular/core';
-import {ListCoursesService} from './list-courses.service';
+import {Component, OnInit, OnChanges, SimpleChanges, Input} from '@angular/core';
+import {ListCoursesService} from '../services/list-courses.service';
 
 declare var $: any;
 
 @Component({
     selector: 'app-list-courses',
     templateUrl: './list-courses.component.html',
-    styleUrls: ['./list-courses.component.css'],
 })
 
-export class ListCoursesComponent implements OnInit {
+export class ListCoursesComponent implements OnInit, OnChanges {
     @Input() collegeSelection: any;
     courses = [];
     loading = true;
@@ -22,7 +21,10 @@ export class ListCoursesComponent implements OnInit {
 
         this.startUp();
     }
-
+    ngOnChanges(changes: SimpleChanges) {
+        console.log('Changes Detected..');
+        this.startUp();
+    }
     startUp() {
         this.loading = true;
         this.searchService.getCourses(this.collegeSelection.id).subscribe(

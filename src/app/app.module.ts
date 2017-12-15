@@ -4,19 +4,19 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SchoolSearchComponent } from './school-search/school-search.component';
 import { Routes, RouterModule } from '@angular/router';
-import { SelectionPageComponent } from './selection-page/selection-page.component';
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ClassViewPageComponent } from './class-view-page/class-view-page.component';
 
-import { SchoolSearchService} from './school-search/school-search.service';
+import { SchoolSearchService} from './services/school-search.service';
 import { HttpModule } from '@angular/http';
 import { ListCoursesComponent } from './list-courses/list-courses.component';
-import { ListCoursesService } from './list-courses/list-courses.service';
+import { ListCoursesService } from './services/list-courses.service';
 const appRoutes: Routes = [
     { path: '', redirectTo: '#/search', pathMatch: 'full'},
     {
         path: '#/search',
-        component: SelectionPageComponent,
+        component: SchoolSearchComponent,
         data: { title: 'Home Page' }
     },
     {
@@ -30,7 +30,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SchoolSearchComponent,
-    SelectionPageComponent,
     PageNotFoundComponent,
     ClassViewPageComponent,
     ListCoursesComponent
