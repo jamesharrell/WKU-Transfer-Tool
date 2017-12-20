@@ -1,29 +1,31 @@
-<div *ngIf="loading">
-    <div class="ui active centered inline small text loader">Updating..</div>
+<div *ngIf="loading; else login">
+        <div *ngIf="collegeID">
+            <div class="ui active centered inline small text loader">Waiting..</div>
+        </div>
 </div>
-<div *ngIf="courses">
-    <h1>College Courses for {{collegeSelection.title}}</h1>
+<ng-template #login>
+    <h1>College Courses for {{courses[0].title}}</h1>
     <table class="ui striped single line table">
         <thead>
-        <tr>
-            <th>Course</th>
-            <th>Title</th>
-            <th>Hrs</th>
-            <th>WKU Course</th>
-            <th>WKU Title</th>
-            <th>WKU Hrs</th>
-        </tr>
+            <tr>
+                <th>Course</th>
+                <th>Title</th>
+                <th>Hrs</th>
+                <th>WKU Course</th>
+                <th>WKU Title</th>
+                <th>WKU Hrs</th>
+            </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let course of courses">
-            <td> {{course.coursenumber}}</td>
-            <td> {{course.coursetitle}}</td>
-            <td> {{course.coursehrs}}</td>
-            <td> {{course.wkucoursenumber}}</td>
-            <td> {{course.wkucoursetitle}}</td>
-            <td> {{course.wkucoursehrs}}</td>
-        </tr>
+            <tr *ngFor="let course of courses">
+                <td> {{course.coursenumber}}</td>
+                <td> {{course.coursetitle}}</td>
+                <td> {{course.coursehrs}}</td>
+                <td> {{course.wkucoursenumber}}</td>
+                <td> {{course.wkucoursetitle}}</td>
+                <td> {{course.wkucoursehrs}}</td>
+            </tr>
         </tbody>
 
     </table>
-</div>
+</ng-template>

@@ -12,17 +12,18 @@ import { SchoolSearchService} from './services/school-search.service';
 import { HttpModule } from '@angular/http';
 import { ListCoursesComponent } from './list-courses/list-courses.component';
 import { ListCoursesService } from './services/list-courses.service';
+import { Component } from '@angular/core/src/metadata/directives';
 const appRoutes: Routes = [
-    { path: '', redirectTo: '#/search', pathMatch: 'full'},
+    { path: '', redirectTo: 'home', pathMatch: 'full'},
     {
-        path: '#/search',
+        path: 'home',
         component: SchoolSearchComponent,
         data: { title: 'Home Page' }
     },
     {
-        path: '#/classes',
-        component: ClassViewPageComponent,
-        data: { title: 'Classes View' }
+        path: 'college/:id',
+        component: SchoolSearchComponent,
+        data: { title: 'College Search' }
     },
     { path: '#/**', component: PageNotFoundComponent }
 ];

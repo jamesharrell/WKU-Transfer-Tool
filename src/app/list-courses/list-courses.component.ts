@@ -1,4 +1,6 @@
 import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
 import { ListCoursesService } from '../services/list-courses.service';
 
 declare var $: any;
@@ -8,27 +10,29 @@ declare var $: any;
     templateUrl: './list-courses.component.html',
 })
 
-export class ListCoursesComponent implements OnInit, OnChanges {
-    @Input() collegeSelection: any;
-    courses = [];
-    loading = true;
+export class ListCoursesComponent {
 
-    constructor(private searchService: ListCoursesService) {
+    courses: string[];
+    loading: boolean;
+    collegeID: number;
 
+    constructor(private route: ActivatedRoute, private searchService: ListCoursesService) {
+        route.params.subscribe(params => {
+            this.collegeID = params['id'];
+            this.startUp();
+        });
     }
 
-    ngOnInit() {
-        this.startUp();
-    }
-    ngOnChanges(changes: SimpleChanges) {
-         this.startUp();
-    }
     startUp() {
+        // Used to show the loading indicator for when data of colleges is being loaded
         this.loading = true;
-        this.searchService.getCourses(this.collegeSelection.id).subscribe(
-            responseCol => {
-                this.courses = responseCol;
-                this.loading = false;
-            });
+
+        if (this.collegeID) {
+            this.searchService.getCourses(this.collegeID).subscribe(
+                responseCol => {
+                    this.courses = responseCol;
+                    this.loading = false;
+                });
+        }
     }
 }
